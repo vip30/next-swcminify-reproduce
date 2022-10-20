@@ -1,34 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This simple app doesn't work when minified using `swcMinify`
 
-## Getting Started
+Steps to reproduce:
 
-First, run the development server:
+1. `npm install && npm run build && npm run start`
+2. Open http://localhost:3000/
+3. Click on `Test`
 
-```bash
-npm run dev
-# or
-yarn dev
+The same steps but using `npm run dev` at step 1 doesn't produce the error:
+
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+react_devtools_backend.js:4026 TypeError: number 0 is not iterable (cannot read property Symbol(Symbol.iterator))
+    at new Map (<anonymous>)
+    at 477-6c21ad656f6f5619.js:1:34664
+    at 477-6c21ad656f6f5619.js:1:33515
+    at eO (477-6c21ad656f6f5619.js:1:34644)
+    at C (477-6c21ad656f6f5619.js:1:31286)
+    at 477-6c21ad656f6f5619.js:1:31334
+    at uJ (framework-ed075df0e0b45174.js:9:91731)
+    at u1 (framework-ed075df0e0b45174.js:9:91927)
+    at o5 (framework-ed075df0e0b45174.js:9:112680)
+    at oQ (framework-ed075df0e0b45174.js:9:104018)
+```
