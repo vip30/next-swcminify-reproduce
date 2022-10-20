@@ -2,22 +2,21 @@ This simple app doesn't work when minified using `swcMinify`
 
 Steps to reproduce:
 
-1. `npm install && npm run build && npm run start`
+1. `yarn & yarn build & yarn start`
 2. Open http://localhost:3000/
-3. Click on `Test`
 
-The same steps but using `npm run dev` at step 1 doesn't produce the error:
+The same steps but using `yarn dev` at step 1 doesn't produce the error:
 
 ```
-react_devtools_backend.js:4026 TypeError: number 0 is not iterable (cannot read property Symbol(Symbol.iterator))
-    at new Map (<anonymous>)
-    at 477-6c21ad656f6f5619.js:1:34664
-    at 477-6c21ad656f6f5619.js:1:33515
-    at eO (477-6c21ad656f6f5619.js:1:34644)
-    at C (477-6c21ad656f6f5619.js:1:31286)
-    at 477-6c21ad656f6f5619.js:1:31334
-    at uJ (framework-ed075df0e0b45174.js:9:91731)
-    at u1 (framework-ed075df0e0b45174.js:9:91927)
-    at o5 (framework-ed075df0e0b45174.js:9:112680)
-    at oQ (framework-ed075df0e0b45174.js:9:104018)
+main-385ea533ec15f018.js:1 TypeError: r is not a function
+    at 205 (579-538a3d2584cf956a.js:1:819)
+    at r (579-538a3d2584cf956a.js:1:34252)
+    at 579-538a3d2584cf956a.js:1:34760
+    at 579-538a3d2584cf956a.js:1:35380
+    at e (579-538a3d2584cf956a.js:1:35386)
+    at 7029 (579-538a3d2584cf956a.js:1:35405)
+    at i (webpack-ee7e63bc15b31913.js:1:141)
+    at 3678 (index-f62a6fb27ed71723.js:1:258)
+    at i (webpack-ee7e63bc15b31913.js:1:141)
+    at index-f62a6fb27ed71723.js:1:151
 ```
